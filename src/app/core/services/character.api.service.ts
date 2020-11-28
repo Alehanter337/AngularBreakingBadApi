@@ -13,8 +13,6 @@ export class CharacterApiService {
   }
 
   loadCharacters(): Observable<Character[]> {
-    return this.http.get<any>('https://www.breakingbadapi.com/api/characters').pipe(
-      map(data => data.results)
-    );
+    return this.http.get<any>('https://www.breakingbadapi.com/api/characters');
   }
 }

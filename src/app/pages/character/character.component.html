@@ -1,7 +1,17 @@
-<p>character works!</p>
+<div class="main" align="center">
+  <h1 align="center">Characters</h1>
+  <p align="center">
+    <button (click)="onSetStatus('all')">All</button>
+    <button (click)="onSetStatus('alive')">Alive</button>
+    <button (click)="onSetStatus('deceased')">Deceased</button>
+    <button (click)="onSetStatus('presumed dead')">Presumed Dead</button>
+  </p>
+  <div class="characters" *ngFor="let character of characters | async | filterStatus: status">
+    <img src="{{ character.img }}" width="70%" height="70%" alt="Image of character">
+    <p> name: {{ character.name }}</p>
+    <p> birthday: {{character.birthday }} </p>
+    <p> portrayed: {{character.portrayed}}</p>
+    <p> status: {{ character.status }}</p>
 
-<div *ngFor="let character of characters | async">
-
-<p> {{ character.name }}</p>
-
+  </div>
 </div>

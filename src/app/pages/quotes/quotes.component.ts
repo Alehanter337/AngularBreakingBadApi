@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote} from '../../core/models/quote';
+import { QuoteApiService} from '../../core/services/quote.api.service';
+import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-quotes',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuotesComponent implements OnInit {
 
-  constructor() { }
+  private author;
+  quotes: Observable<Quote[]>;
+
+
+  constructor(private quoteApiService: QuoteApiService) {
+
+  }
 
   ngOnInit(): void {
   }

@@ -7,12 +7,14 @@ import {RouterModule} from '@angular/router';
 import { CharacterComponent } from './pages/character/character.component';
 import { QuotesComponent } from './pages/quotes/quotes.component';
 import {CharacterApiService} from './core/services/character.api.service';
+import {FilterStatusPipe} from './core/pipes/filter-status.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterComponent,
-    QuotesComponent
+    QuotesComponent,
+    FilterStatusPipe
   ],
   imports: [
     BrowserModule,
