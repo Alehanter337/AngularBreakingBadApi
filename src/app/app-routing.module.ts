@@ -5,7 +5,7 @@ import { QuotesComponent} from './pages/quotes/quotes.component';
 
 const routes: Routes = [
   {path: '', component: CharacterComponent},
-  {path: 'quotes\:author', component: QuotesComponent}
+  {path: 'quotes/:author', component: QuotesComponent}
 ];
 
 @NgModule({
