@@ -8,6 +8,7 @@ import { CharacterComponent } from './pages/character/character.component';
 import { QuotesComponent } from './pages/quotes/quotes.component';
 import {CharacterApiService} from './core/services/character.api.service';
 import {FilterStatusPipe} from './core/pipes/filter-status.pipe';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FilterStatusPipe} from './core/pipes/filter-status.pipe';
   imports: [
     BrowserModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [CharacterApiService],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import {Character} from '../../core/models/character';
 import { CharacterApiService} from '../../core/services/character.api.service';
 import {Observable} from 'rxjs';
 import {Status} from '../../core/models/status';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,13 +13,17 @@ import {Status} from '../../core/models/status';
 })
 export class CharacterComponent {
 
-  constructor(private apiService: CharacterApiService) {
+  constructor(private apiService: CharacterApiService, private router: Router) {
   }
   status: Status = 'all';
   characters: Observable<Character[]> = this.apiService.loadCharacters();
 
   onSetStatus(status: Status): void {
     this.status = status;
+  }
+
+  loadQuotes(author: string): void {
+    this.router.navigate(['quotes', author]);
   }
 
 }

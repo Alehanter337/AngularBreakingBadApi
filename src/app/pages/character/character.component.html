@@ -6,12 +6,19 @@
     <button (click)="onSetStatus('deceased')">Deceased</button>
     <button (click)="onSetStatus('presumed dead')">Presumed Dead</button>
   </p>
-  <div class="characters" *ngFor="let character of characters | async | filterStatus: status">
-    <img src="{{ character.img }}" width="70%" height="70%" alt="Image of character">
-    <p> name: {{ character.name }}</p>
-    <p> birthday: {{character.birthday }} </p>
-    <p> portrayed: {{character.portrayed}}</p>
-    <p> status: {{ character.status }}</p>
+  <div class="album py-5 bg-light">
+    <div class="row">
 
+      <div class="col-md-4" style="padding: 15px" *ngFor="let character of characters | async | filterStatus: status">
+        <img src="{{ character.img }}" width="50%" height="60%" alt="Image of character">
+        <p> name: {{ character.name }}</p>
+        <p> birthday: {{character.birthday }} </p>
+        <p> portrayed: {{character.portrayed}}</p>
+        <p> status: {{ character.status }}</p>
+        <a [routerLink]="['quotes', character.name ]">Character Quote's</a>
+
+      </div>
+
+    </div>
   </div>
 </div>

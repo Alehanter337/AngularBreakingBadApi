@@ -1,6 +1,7 @@
 .characters {
-
-  width: 20%;
   padding: 15px;
+}
 
+p {
+  font-size: 12px;
 }
