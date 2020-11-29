@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Quote} from '../../core/models/quote';
 import { QuoteApiService} from '../../core/services/quote.api.service';
 import {Observable, Subscription} from 'rxjs';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
+import {mergeMap} from 'rxjs/operators';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class QuotesComponent implements OnInit {
 
   private author;
   private subs: Subscription;
-  quotes: Observable<Quote[]>;
+  quotes: Quote[];
 
 
   constructor(private quoteApiService: QuoteApiService, private route: ActivatedRoute) {
@@ -22,9 +23,12 @@ export class QuotesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.subs = this.route.params.subscribe((params: ParamMap): void => {
-      this.author = params['author'];
-    });
+    this.subs = this.route.params.pipe(
+      mergeMap((params: Params): Observable<Quote[]> => {
+        this.author = params['author'];
+        return this.quoteApiService.loadQuotes(this.author);
+      })
+    ).subscribe((quotes: Quote[]) => this.quotes = quotes);
   }
 
 }

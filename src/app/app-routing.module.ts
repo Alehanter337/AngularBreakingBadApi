@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule, Router} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 import { CharacterComponent} from './pages/character/character.component';
 import { QuotesComponent} from './pages/quotes/quotes.component';
 

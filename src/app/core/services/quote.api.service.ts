@@ -10,7 +10,7 @@ export class QuoteApiService {
 
   constructor(private http: HttpClient) { }
 
-  loadQuotes(): Observable<Quote[]> {
-    return this.http.get<any>('https://breakingbadapi.com/api/quotes');
+  loadQuotes(author): Observable<Quote[]> {
+    return this.http.get<any>(`https://breakingbadapi.com/api/quote?author=${author}`);
   }
 }

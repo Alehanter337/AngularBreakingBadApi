@@ -22,8 +22,4 @@ export class CharacterComponent {
     this.status = status;
   }
 
-  loadQuotes(author: string): void {
-    this.router.navigate(['quotes', author]);
-  }
-
 }
