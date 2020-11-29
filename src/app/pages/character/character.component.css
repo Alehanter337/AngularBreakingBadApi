@@ -1,7 +1,29 @@
-.characters {
-  padding: 15px;
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Bebas+Neue&family=Nerko+One&display=swap');
+
+.col-md-4{
+  border: solid;
+
 }
 
+.header{
+  background: black;
+}
+
+button{
+  font-size: 28px;
+
+}
+
+.main {
+  background: black;
+  font-family: 'Alatsi', serif;
+}
 p {
-  font-size: 12px;
+  font-size: 22px;
+}
+
+a {
+  border: groove  green;
+  font-size: 22px;
+  color: rgba(5,87,0,0.94);
 }

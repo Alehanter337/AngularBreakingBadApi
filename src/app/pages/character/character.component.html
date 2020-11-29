@@ -1,16 +1,19 @@
 <div class="main" align="center">
-  <h1 align="center">Characters</h1>
-  <p align="center">
-    <button (click)="onSetStatus('all')">All</button>
-    <button (click)="onSetStatus('alive')">Alive</button>
-    <button (click)="onSetStatus('deceased')">Deceased</button>
-    <button (click)="onSetStatus('presumed dead')">Presumed Dead</button>
-  </p>
-  <div class="album py-5 bg-light">
+  <div class="header">
+    <h1 style="color: white " align="center">Breaking Bad Characters</h1>
+    <h2>spoilers alarm</h2>
+    <p align="center">
+      <button (click)="onSetStatus('all')">All</button>
+      <button (click)="onSetStatus('alive')">Alive</button>
+      <button (click)="onSetStatus('deceased')">Deceased</button>
+      <button (click)="onSetStatus('presumed dead')">Presumed Dead</button>
+    </p>
+  </div>
+  <div class="album bg-light">
     <div class="row">
 
-      <div class="col-md-4" style="padding: 15px" *ngFor="let character of characters | async | filterStatus: status">
-        <img src="{{ character.img }}" width="50%" height="60%" alt="Image of character">
+      <div class="col-md-4" *ngFor="let character of characters | async | filterStatus: status">
+        <img src="{{ character.img }}" style="padding-top: 10px" width="50%" height="65%" alt="Image of character">
         <p> name: {{ character.name }}</p>
         <p> birthday: {{character.birthday }} </p>
         <p> portrayed: {{character.portrayed}}</p>
