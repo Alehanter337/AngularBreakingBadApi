@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Bebas+Neue&family=Nerko+One&display=swap');
+.quotes{
+  font-family: 'Bebas Neue'
+}
+
+.author{
+  font-size: 45px;
+}
+
+.quote{
+  font-size: 30px;
+  font-style: italic;
+}
+.quote_1{
+  border: solid;
+}
+

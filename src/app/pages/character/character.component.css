@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Bebas+Neue&family=Nerko+One&display=swap');
+
+
+.filter{
+  font-size: 24px;
+}
+.season{
+  font-size: 26px;
+}
+.col-md-4{
+  border: solid;
+
+}
+.name{
+  font-style: inherit;
+}
+.header{
+  background: black;
+}
+
+button{
+  font-size: 28px;
+
+}
+
+.main {
+  background: black;
+  font-family: 'Alatsi', serif;
+}
+p {
+  font-size: 22px;
+}
+
+a {
+  border: groove  green;
+  font-size: 22px;
+  color: rgba(5,87,0,0.94);
+}
