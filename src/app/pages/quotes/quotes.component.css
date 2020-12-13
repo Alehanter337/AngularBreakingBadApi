@@ -3,8 +3,13 @@
   font-family: 'Bebas Neue'
 }
 
+.back{
+  font-size: 24px;
+  width: 100px;
+}
+
 .author{
-  font-size: 45px;
+  font-size: 38px;
 }
 
 .quote{

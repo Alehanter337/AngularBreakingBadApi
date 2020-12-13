@@ -1,6 +1,6 @@
 <div class="main" align="center">
   <div class="header">
-    <h1 style="color: white " align="center">Breaking Bad Characters</h1>
+    <h1 class="head1" style="color: white " align="center">Breaking Bad Characters</h1>
     <h2>spoilers alarm</h2>
     <p align="center">
       <button (click)="onSetStatus('all')">All</button>
@@ -8,8 +8,15 @@
       <button (click)="onSetStatus('deceased')">Deceased</button>
       <button (click)="onSetStatus('presumed dead')">Presumed Dead</button>
     </p>
+    <mat-paginator style="background: black"
+                   itemsPerPageLabel="Items per page"
+                   (page)="changePage()"
+                   [length]="this.characters"
+                   [pageSizeOptions]="[5,10,15]">
+    </mat-paginator>
   </div>
   <div class="album bg-light">
+<<<<<<< Updated upstream
     <div class="row">
 
       <div class="col-md-4" *ngFor="let character of characters | async | filterStatus: status">
@@ -19,6 +26,35 @@
         <p> portrayed: {{character.portrayed}}</p>
         <p> status: {{ character.status }}</p>
         <a [routerLink]="['quotes', character.name]">Character Quote's</a>
+=======
+    <br>
+    <div align="center">
+      <h1>Filter:<input  [(ngModel)]="name" placeholder="name"></h1>
+      <button>confirm</button>
+    </div>
+    <br>
+
+    <h1 class="season" align="center">Set season: </h1>
+    <p align="center">
+      <button (click)="onSetSeason(0)">All</button>
+      <button (click)="onSetSeason(1)">1</button>
+      <button (click)="onSetSeason(2)">2</button>
+      <button (click)="onSetSeason(3)">3</button>
+      <button (click)="onSetSeason(4)">4</button>
+      <button (click)="onSetSeason(5)">5</button>
+    </p>
+
+    <div class="row">
+      <div class="col-md-3" *ngFor="let character of characters | async |
+       filterStatus: status | filterName: name | filterSeason: season">
+        <p class="name"> {{ character.name }}</p>
+        <p>{{ character.status }}</p>
+        <p><a [routerLink]="['quotes', character.name]">Character Quote's</a></p>
+        <img src="{{ character.img }}" width="50%" height="65%" alt="Image of character">
+        <p> birthday: {{character.birthday }} </p>
+        <p> portrayed: {{character.portrayed}}</p>
+        <p> seasons: {{character.appearance}}</p>
+>>>>>>> Stashed changes
 
       </div>
 

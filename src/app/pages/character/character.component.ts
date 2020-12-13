@@ -13,6 +13,15 @@ import { Router } from '@angular/router';
 })
 export class CharacterComponent {
 
+<<<<<<< Updated upstream
+=======
+  status: Status = 'all';
+  characters: Observable<Character[]> = this.apiService.loadCharacters();
+  name = '';
+  season = 0;
+
+
+>>>>>>> Stashed changes
   constructor(private apiService: CharacterApiService, private router: Router) {
   }
   status: Status = 'all';
@@ -22,4 +31,11 @@ export class CharacterComponent {
     this.status = status;
   }
 
+<<<<<<< Updated upstream
+=======
+  onSetSeason(season: number): void{
+    this.season = season;
+  }
+
+>>>>>>> Stashed changes
 }
