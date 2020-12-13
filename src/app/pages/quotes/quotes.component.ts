@@ -25,14 +25,10 @@ export class QuotesComponent implements OnInit {
   ngOnInit(): void {
     this.subs = this.route.params.pipe(
       mergeMap((params: Params): Observable<Quote[]> => {
-        this.author = params.author;
+        this.author = params['author'];
         return this.quoteApiService.loadQuotes(this.author);
       })
     ).subscribe((quotes: Quote[]) => this.quotes = quotes);
   }
 
-
-  pageBack(): void{
-    history.back();
-  }
 }

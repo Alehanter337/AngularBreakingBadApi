@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Bebas+Neue&family=Nerko+One&display=swap');
 
-<<<<<<< Updated upstream
-.col-md-4{
-  border: solid;
-
-}
-
-=======
 
 .filter{
   font-size: 24px;
@@ -15,38 +8,23 @@
   font-size: 26px;
 }
 .col-md-3{
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 
 }
-
-.filterName{
-  display: flex;
-
+.isClicked {
+  color: gray;
 }
 
-
-.form-control{
-  text-align: center;
-  width: 20%;
-}
 .name{
   font-style: inherit;
-  font-size: 26px;
 }
-
-
->>>>>>> Stashed changes
 .header{
   background: black;
 }
-.head1{
-  font-size: 38px;
-  font-weight: bold;
-}
 
 button{
+  padding: 10px;
   font-size: 28px;
-  padding: 8px;
 
 }
 

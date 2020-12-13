@@ -10,7 +10,7 @@ export class FilterSeasonPipe implements PipeTransform {
     if (season === 0){
       return list;
     }
+
     return list.filter((item: Character): boolean => item.appearance && item.appearance.some((appearance: number): boolean => appearance === season));
   }
 }
-
