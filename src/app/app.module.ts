@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 import { FilterNamePipe } from './core/pipes/filter-name.pipe';
 import { FilterSeasonPipe } from './core/pipes/filter-season.pipe';
 import {MatRadioModule} from '@angular/material/radio';
+import { FilterComponent } from './pages/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatRadioModule} from '@angular/material/radio';
     QuotesComponent,
     FilterStatusPipe,
     FilterNamePipe,
-    FilterSeasonPipe
+    FilterSeasonPipe,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
