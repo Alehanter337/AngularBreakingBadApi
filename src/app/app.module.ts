@@ -32,7 +32,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatPaginatorModule,
     MatRadioModule,
     BrowserAnimationsModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [CharacterApiService],
   bootstrap: [AppComponent]

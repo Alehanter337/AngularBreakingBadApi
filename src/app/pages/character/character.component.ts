@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Character} from '../../core/models/character';
 import { CharacterApiService} from '../../core/services/character.api.service';
 import {Observable} from 'rxjs';
 import {Status} from '../../core/models/status';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PageEvent} from '@angular/material/paginator';
-
+import { MatPaginator} from '@angular/material/paginator';
 
 
 @Component({
@@ -19,7 +19,6 @@ export class CharacterComponent implements OnInit {
   characters: Observable<Character[]> = this.apiService.loadCharacters();
   name = '';
   season = 0;
-  isClicked = false;
   page: number;
   pageSize: number;
 

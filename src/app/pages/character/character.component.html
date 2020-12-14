@@ -9,15 +9,21 @@
       <button (click)="onSetStatus('presumed dead')">Presumed Dead</button>
     </p>
   </div>
-  <mat-paginator style="background: black"
-    itemsPerPageLabel="Items per page"
+  <mat-paginator
+    style="background: black"
+    [pageSizeOptions]="[10]"
     (page)="changePage($event)"
-    [pageSize]="pageSize" [page]="page"
-    [pageSizeOptions]="[10, 100]">
+    [pageSize]="pageSize"
+    [pageIndex]="page"
+    [length]="characters"
+  >
+
   </mat-paginator>
   <div class="album bg-light">
     <br>
-    <h1 align="center" class="filter">Filter: <input [(ngModel)]="name" placeholder="name"></h1>
+    <h1 align="center" class="filter">Filter: <label>
+      <input [(ngModel)]="name" placeholder="name">
+    </label></h1>
 
     <h1 class="season" align="center">Set season: </h1>
     <p align="center">
@@ -34,7 +40,7 @@
        filterStatus: status |
         filterName: name |
          filterSeason: season |
-          slice:(page * pageSize) |
+          slice:(page * pageSize) :
            ((page+1) * pageSize)" class="col-md-3">
 
         <p class="name"> {{ character.name }}</p>
