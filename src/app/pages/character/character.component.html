@@ -11,11 +11,11 @@
   </div>
   <mat-paginator
     style="background: black"
-    [pageSizeOptions]="[10]"
+    [pageSizeOptions]="[5,10,20,30,40,50]"
     (page)="changePage($event)"
     [pageSize]="pageSize"
     [pageIndex]="page"
-    [length]="characters"
+    [length]="(characters | async)?.length"
   >
 
   </mat-paginator>

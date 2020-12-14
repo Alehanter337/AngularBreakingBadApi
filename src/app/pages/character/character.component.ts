@@ -35,8 +35,15 @@ export class CharacterComponent implements OnInit {
     //this.isClicked = !this.isClicked;
   }
   ngOnInit(): void{
-  this.page = +this.route.snapshot.queryParams['page'];
-  this.pageSize = +this.route.snapshot.queryParams['pageSize'];
+  this.page = +this.route.snapshot.queryParams['page'] -1 || 0;
+  this.pageSize = +this.route.snapshot.queryParams['pageSize'] || 10;
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        page: (this.page + 1),
+        pageSize: this.pageSize
+      },
+      queryParamsHandling: 'merge'});
 
 }
 
@@ -48,6 +55,8 @@ export class CharacterComponent implements OnInit {
         pageSize: pageEvent.pageSize
       },
       queryParamsHandling: 'merge'});
+    this.page = pageEvent.pageIndex;
+    this.pageSize = pageEvent.pageSize;
   }
 
 }
